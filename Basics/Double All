@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        int a=scn.nextInt();
+        int b=scn.nextInt();
+        int c=scn.nextInt();
+        int d=scn.nextInt();
+        int e=scn.nextInt();
+        a=2*a;
+        b=2*b;
+        c=2*c;
+        d=2*d;
+        e=2*e;
+        int ans =a+b+c+d+e;
+        System.out.println(ans);
+    }
+}
