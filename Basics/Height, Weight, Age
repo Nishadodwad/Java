@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int h=scn.nextInt();
+         int w=scn.nextInt();
+          int a=scn.nextInt();
+          if(h==5&&w==50&&a==10)
+          {
+              System.out.println("Overweight");
+          }
+          else if(h==5||w==60)
+          {
+              System.out.println("Fat");
+          }
+          else if(h==6&&w==50)
+          {
+              System.out.println("Slim");
+          }
+          else
+{
+    System.out.println("None");
+}    }
+}
