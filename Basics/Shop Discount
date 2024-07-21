@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int x=scn.nextInt();
+        int a;
+        x=x*100;
+        if(x>1000)
+        {
+             a=x-(int)(0.1*x);
+        }
+        else
+        {
+             a=x;
+        }
+        System.out.println(a);
+    }
+}
