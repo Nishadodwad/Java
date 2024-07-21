@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        int age  =scn.nextInt();
+        int salary =scn.nextInt();
+        if(age>60)
+        {
+             salary=salary+1000;
+        }
+        else if(age>40&&age<=60)
+        {
+             salary=salary+500;
+        }
+        else if(age<=40)
+        {
+            salary=salary;
+        }
+        else{
+            System.out.println("Invalid");
+            return;
+        }
+        System.out.println(salary);
+    }
+}
