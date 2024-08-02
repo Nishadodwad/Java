@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+    public static void sum(int a[], int b[],int n1, int n2)
+    {
+        int ans=0, bns=0, result=0;
+        int n=0;
+        for(int i=0;i<n1;i++)
+        {
+            ans=ans*10+a[i];
+        }
+        for(int i=0;i<n2;i++)
+        {
+            bns=bns*10+b[i];
+        }
+        result=ans+bns;
+        int r1=result;
+        while(r1!=0)
+        {
+            n++;
+            r1=r1/10;
+        }
+        int r[]=new int[n];
+        for(int i=n-1;i>=0;i--)
+        {
+            r[i]=result%10;
+            result=result/10;
+        }
+        for(int i=0;i<n;i++)
+        {
+           System.out.println(r[i]);
+        }
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n1=scn.nextInt();
+        int a[]=new int[n1];
+        for(int i=0;i<n1;i++)
+        {
+            a[i]=scn.nextInt();
+        }
+        int n2=scn.nextInt();
+        int b[]=new int[n2];
+        for(int i=0;i<n2;i++)
+        {
+            b[i]=scn.nextInt();
+        }
+        sum(a,b,n1,n2);
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
