@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void chart(int a[])
+    {
+        int column=a.length;
+        int row=a[1];
+        for(int i=0;i<a.length;i++)
+        {
+           if(a[i]>row)
+           {
+               row=a[i];
+           }
+        }
+        for(int i=row;i>0;i--)
+        {
+          for(int j=0;j<a.length;j++)
+          {
+              if(i>a[j])
+              {
+                  System.out.print(" ");
+              }
+              else
+              {
+                  System.out.print("*");
+              }
+              System.out.print(" ");
+          }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n=scn.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=scn.nextInt();
+        }
+        chart(a);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
