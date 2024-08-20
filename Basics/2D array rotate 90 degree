@@ -1,0 +1,67 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void swap_row_wise(int a[][],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            int left=0, right=n-1;
+            while(left<right)
+            {
+                int temp=a[i][left];
+                a[i][left]=a[i][right];
+                a[i][right]=temp;
+                left++;
+                right--;
+            }
+        }
+    }
+     public static void display(int a[][],int n)
+     {
+         for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+     }
+    public static void transpose(int a[][],int n)
+    {
+        int temp;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i<j)
+                {
+                    temp=a[i][j];
+                    a[i][j]=a[j][i];
+                    a[j][i]=temp;
+                }     
+            }
+        }
+        
+        
+    }
+    public static void main(String[] args) {
+        Scanner scn=new Scanner (System.in);
+        int n=scn.nextInt();
+        int a[][]=new int [n][n];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                a[i][j]=scn.nextInt();
+            }
+        }
+        transpose(a,n);
+        swap_row_wise(a,n);
+        display(a,n);
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
