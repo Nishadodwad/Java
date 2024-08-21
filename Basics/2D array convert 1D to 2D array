@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void convert(int a[],int n,int p,int q)
+    {
+        if(p*q!=n)
+        {
+            System.out.println("Invalid input");
+            return;
+        }
+        int b[][]=new int [p][q];
+        int k=0;
+        for(int i=0;i<p;i++)
+        {
+            for(int j=0;j<q;j++)
+            {
+                b[i][j]=a[k];
+                System.out.print(b[i][j]+" ");
+                k++;
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n=scn.nextInt();
+        int a[]=new int [n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=scn.nextInt();
+        }
+        int p=scn.nextInt();
+        int q=scn.nextInt();
+        convert(a,n,p,q);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
