@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void spiral(int a[][],int m,int n)
+    {
+        int rmin=0, rmax=m-1, cmin=0, cmax=n-1;
+        
+        int c=0;
+        while(c<m*n)
+        {
+            for(int i=rmin;i<=rmax&&c<m*n;i++)
+        {
+            System.out.println(a[i][cmin]);
+            c++;    
+        }
+        cmin++;
+         for(int i=cmin;i<=cmax&&c<m*n;i++)
+        {
+            System.out.println(a[rmax][i]);
+              c++;
+        }
+        rmax--;
+         for(int i=rmax;i>=rmin&&c<m*n;i--)
+        {
+            System.out.println(a[i][cmax]);
+              c++;
+        }
+        cmax--;
+         for(int i=cmax;i>=cmin&&c<m*n;i--)
+        {
+            System.out.println(a[rmin][i]);
+              c++;
+        }
+        rmin++;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        int m=scn.nextInt();
+         int n=scn.nextInt();
+        int a[][]=new int[m][n];
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                a[i][j]=scn.nextInt();
+            }
+        }
+        spiral(a,m,n);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
