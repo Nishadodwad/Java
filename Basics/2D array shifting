@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void reverse(int a[][],int row,int left,int right)
+    {
+        while(left<right)
+        {
+            int temp=a[row][left];
+            a[row][left]=a[row][right];
+            a[row][right]=temp;
+            left++;
+            right--;
+        }
+    }
+    public static void shift_rowise(int a[][],int n,int k)
+    {
+        for(int i=0;i<n;i++)
+        {
+            reverse(a,i,0,n-1);
+            reverse(a,i,0,k-1);
+            reverse(a,i,k,n-1);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int a[][]=new int [n][n];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                a[i][j]=scn.nextInt();
+            }
+        }
+        int k=scn.nextInt();
+        k=k-1;
+        shift_rowise(a,n,k);
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                System.out.print(a[i][j]+" ");
+                
+            }
+            System.out.println();
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
