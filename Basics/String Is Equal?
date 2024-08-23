@@ -27,3 +27,19 @@ public class Solution {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
     }
 }
+METHOD 2
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+     
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        String a=scn.nextLine();
+        String b=scn.nextLine();
+        System.out.println(a.equals(b));
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
