@@ -1,0 +1,60 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static String isogram(String s)
+    {
+        for(int i=0;i<s.length();i++)
+        {
+            for(int j=i+1;j<s.length();j++)
+            {
+                if(s.charAt(i)==s.charAt(j))
+                {
+                    return "Not an Isogram";
+                }
+            }
+        }
+        return "Isogram";
+    }
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        String s=scn.nextLine();
+        System.out.println(isogram(s));
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
+
+METHOD 2
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static String isogram(String s)
+    {
+       int freq[]=new int[26];
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            int index=ch-'a';
+            freq[index]++;
+        }
+        for(int i=0;i<26;i++)
+        {
+            if(freq[i]>1)
+            {
+                return "Not an Isogram";
+            }
+        }
+        return "Isogram";
+    }
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        String s=scn.nextLine();
+        System.out.println(isogram(s));
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
