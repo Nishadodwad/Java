@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static String lcp (String [] a, int n)
+    {
+        int l=Integer.MAX_VALUE;
+        for(int i=0;i<n;i++)
+        {
+            if(a[i].length()<l)
+            {
+                l=a[i].length();
+            }
+        }
+      
+        String ans="";
+        for(int i=0;i<l;i++)
+        {
+            int flag=0;
+            char ch=a[0].charAt(i);
+            for(int j=0;j<n;j++)
+            {
+                if(ch!=a[j].charAt(i))
+                {
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0)
+            {
+                ans+=ch;
+            }
+          
+        }
+        return ans;
+    }
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n= scn.nextInt();
+        String [] a=new String [n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=scn.next();
+        }
+        System.out.println(lcp(a,n));
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
