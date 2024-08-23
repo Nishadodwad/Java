@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static String anagram(String a,String b)
+    {
+        int freq[]=new int[26];
+        for(int i=0;i<a.length();i++)
+        {
+            char ch=a.charAt(i);
+            int index=ch-'a';
+            freq[index]++;
+        }
+        for(int i=0;i<b.length();i++)
+        {
+            char ch=b.charAt(i);
+            int index=ch-'a';
+            freq[index]--;
+        }
+        for(int i=0;i<26;i++)
+        {
+            if(freq[i]!=0)
+            {
+                return "False";
+            }
+        }
+        return "True";
+    }
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        String a=scn.nextLine();
+        String b=scn.nextLine();
+        System.out.println(anagram(a,b));
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
