@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static int isPallindrome(String a)
+    {
+        int l=0, r=a.length()-1;
+        while(l<r)
+        {
+            if(a.charAt(l)!=a.charAt(r))
+            {
+                return 0;
+            }
+            l++;
+            r--;
+        }
+        return 1;
+    }
+    public static void print(String s)
+    {
+        for(int i=0;i<s.length();i++)
+        {
+           
+            for(int j=i+1;j<=s.length();j++)
+            {
+                if(isPallindrome(s.substring(i,j))==1)
+                {
+                    System.out.println(s.substring(i,j));
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        String s=scn.next();
+        print(s);
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
